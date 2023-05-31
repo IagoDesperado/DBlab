@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+
+{% block content%}
+{% if session['flag'] == 'library admin'%}
+<h1>User Info:</h1>
+{%for info in info%}
+<h2>{{info}}</h2>
+<form method="POST">
+    <div-class='form-group'>
+      <label for="new age">Edit</label>
+      <input type="text" id="new age" name="new age" size="50"><br><br>
+  </div>
+{%endfor%}
+<br />
+  <button type="submit" class="btn btn-primary">Delete user</button>
+</form>
+{%endif%}
+{%endblock%}

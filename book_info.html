@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content  %}
+
+<h1>Title:  {{ book_info[0] }}  </h1>
+<h2>Writer: {{ writer[0] }} {{ writer[1] }} </h2>
+<h2> Number of pages: {{ book_info[1] }}  </h2>
+<h2> Description:</h2>
+<h1>{{ book_info[2]  }}</h1>
+<h2> Genre:</h2>
+{% for genre in genre  %}
+<h2>{{ genre[0] }} </h2>
+{% endfor  %}
+{% for book_ISBN in book_ISBN  %}
+<h2> ISBN: {{ book_ISBN[0] }} written in: {{ book_ISBN[1] }}</h2>
+{% endfor  %}
+
+<div class="form-group">
+   <button type="submit" class="btn btn-primary"> Borrow</button>
+   <button type="submit" class="btn btn-primary"> Get on waiting list</button>
+<nav class="nav nav-pills nav-fill">
+  <a class="nav-link active" href="{{url_for('write_review')}}">Write a review</a>
+</nav>
+
+{% endblock  %} 
+

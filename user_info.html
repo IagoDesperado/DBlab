@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+
+{% block content %}
+  {% block title %}<h1> User info:</h1> 
+    {% endblock %}
+ <h2>username: {{user_info[0]}}</h2>
+ 
+ <h2>password: {{user_info[1]}}</h2>
+ 
+ <h2>I am a: {{user_info[2]}}</h2>
+
+ <h2>email: {{user_info[3]}}</h2>
+
+ <h2>First Name: {{user_info[4]}}</h2>
+ 
+ <h2>Last Name: {{user_info[5]}}</h2>
+ 
+ <h2>Age: {{user_info[6]}}</h2>
+{%if user_info[2] == "teacher"%}
+ <nav class="nav nav-pills nav-fill">
+  <a class="nav-link active" href="{{url_for('edit_profile')}}">Edit Profile</a>
+</nav>
+{%endif%}
+{%endblock%}

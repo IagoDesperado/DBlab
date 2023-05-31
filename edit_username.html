@@ -1,0 +1,47 @@
+{%extends 'base.html'%}
+
+{% block content %}
+  {% block title %}<h1> Enter new information:</h1> 
+    {% endblock %}
+  <form method="POST">
+    <div-class='form-group'>
+      <label for="new username">New Username</label>
+    <input type="text" id="new username" name="new username" size="50"><br><br>
+  </div>
+
+  <form method="POST">
+    <div-class='form-group'>
+      <label for="new password">New Password</label>
+    <input type="text" id="new password" name="new password" size="50"><br><br>
+  </div>
+
+  <form method="POST">
+    <div-class='form-group'>
+      <label for="new email">New email</label>
+      <input type="text" id="new email" name="new email" size="50"><br><br>
+  </div>
+
+  <form method="POST">
+    <div-class='form-group'>
+      <label for="new first name">New Name</label>
+    <input type="text" id="new first name" name="new first name" size="50"><br><br>
+  </div>
+
+
+  <form method="POST">
+    <div-class='form-group'>
+      <label for="new last name">New Surname</label>
+     <input type="text" id="new last name" name="new last name" size="50"><br><br>
+  </div>
+ 
+  <form method="POST">
+    <div-class='form-group'>
+      <label for="new age">New age</label>
+      <input type="text" id="new age" name="new age" size="50"><br><br>
+  </div>
+
+  <br />
+  <button type="submit" class="btn btn-primary">Commit changes</button>
+</form>
+
+{%endblock%}

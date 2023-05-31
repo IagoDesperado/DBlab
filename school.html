@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Principal: {{ principal[0] }} {{ principal[1] }}</h1>
+<h1>Library Administrator: {{ lib_admin[0]  }} {{ lib_admin[1] }} </h1>
+{% for book in book %}
+   <a href="{{ url_for('get_book_info', name = sch_name ,book_title = book[0]) }}">
+   <h1> title:{{ book[0] }} </h1>
+    <h2> copies available: {{ book[1]  }}  </h2>
+{% endfor  %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to Iago desperado's Website Extravaganza</h1> 
+    {% endblock %}
+       <nav class="navbar navbar-expand-lg">
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+	  {%if session['loggedin'] == false:%}
+    <a class="nav-item nav-link" id="signUp" href="/sign up">Sign Up</a>
+    <a class="nav-item nav-link" id="login" href="/">Log In</a>
+	  {%else%}
+    <a class="nav-item nav-link" id="logout" href="/logout">Log Out</a>
+    <a class="nav-item nav-link" id="userinfo" href="/user info">Profile</a>
+    {%if session['flag'] == 'library admin'%}
+    <a class="nav-item nav-link" id="see_users" href="/see users">See users</a>
+    {%endif%}
+    {% endif %}
+  </div>
+      </div>
+       </nav>
+{% for post in post %}
+    <a href="{{ url_for('sch',name = post[0]) }}">
+        <h1>School:  {{ post[0] }}</h1>
+       <h2>Adress:  {{ post[1]  }}</h1>
+       <h2>City:  {{ post[2]  }}</h2>
+      <h2>Email: {{ post[3] }}</h2>
+    <hr>
+{% endfor  %}
+{% endblock %}
